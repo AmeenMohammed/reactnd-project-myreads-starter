@@ -1,7 +1,7 @@
 import React from 'react'
 import * as BooksAPI from './BooksAPI'
 import './App.css'
-import  BookShelf  from './BookShelf'
+import  Books  from './Books'
 
 class BooksApp extends React.Component {
   state = {
@@ -25,15 +25,15 @@ class BooksApp extends React.Component {
               </div>
               <div className="bookshelf">
                   <h2 className="bookshelf-title">Currently Reading</h2>
-                  <BookShelf books={this.state.books}/>
+                  <Books books={this.state.books}/>
               </div>
               <div className="bookshelf">
                   <h2 className="bookshelf-title">Want to Read</h2>
-                  <BookShelf books={this.state.books}/>
+                  <Books books={this.state.books}/>
               </div>
               <div className="bookshelf">
                   <h2 className="bookshelf-title">Read</h2>
-                  <BookShelf books={this.state.books}/>
+                  <Books books={this.state.books}/>
               </div>
             </div>
       </div>

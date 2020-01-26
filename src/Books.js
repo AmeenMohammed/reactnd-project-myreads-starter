@@ -1,7 +1,7 @@
 import React from 'react'
 import './App.css'
 
-class BookShelf extends React.Component {
+class Books extends React.Component {
     render(){
         return(
             <div className="bookshelf-books">
@@ -32,4 +32,4 @@ class BookShelf extends React.Component {
     }
 }
 
-export default BookShelf
+export default Books
