@@ -4,10 +4,11 @@ import  Books  from './Books'
 
 class BookShelf extends React.Component{
     render(){
+        const { books, onShelfChange, name } = this.props;
         return(
             <div className="bookshelf">
-                <h2 className="bookshelf-title">{this.props.name}</h2>
-                <Books onShelfChange={this.props.onShelfChange} books={this.props.books}/>
+                <h2 className="bookshelf-title">{name}</h2>
+                <Books onShelfChange={onShelfChange} books={books}/>
             </div>
         )
     }

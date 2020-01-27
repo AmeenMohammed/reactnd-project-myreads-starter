@@ -5,7 +5,6 @@ import  BookTop  from './BookTop'
 class Book extends React.Component {
     render(){
         const { book, onShelfChange } = this.props;
-
         return(
                 <li>   
                     <div className="book">
