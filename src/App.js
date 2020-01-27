@@ -16,6 +16,9 @@ class BooksApp extends React.Component {
     })
   }
   render() {
+    const wantToRead = this.state.books.filter((book)=>(book.shelf === "wantToRead"));
+    const read = this.state.books.filter((book)=>(book.shelf === "read"));
+    const CurrentlyReading = this.state.books.filter((book)=>(book.shelf === "currentlyReading"));
     console.log("books", this.state.books);
     return (
       <div className="app">
@@ -23,9 +26,9 @@ class BooksApp extends React.Component {
               <div className="list-books-title">
                 <h1>MyReads</h1>
               </div>
-                <BookShelf books={this.state.books} name="Currently Reading"/>
-                <BookShelf books={this.state.books} name="Want to Read"/>
-                <BookShelf books={this.state.books} name="Read"/>
+                <BookShelf books={CurrentlyReading} name="Currently Reading"/>
+                <BookShelf books={wantToRead} name="Want to Read"/>
+                <BookShelf books={read} name="Read"/>
             </div>
       </div>
     )
