@@ -7,7 +7,7 @@ class Book extends React.Component {
         const { book } = this.props;
 
         return(
-                <li key={book.id}>   
+                <li>   
                     <div className="book">
                         <BookTop shelf={book.shelf} image={book.imageLinks.thumbnail}/>
                         <div className="book-title">{book.title}</div>
