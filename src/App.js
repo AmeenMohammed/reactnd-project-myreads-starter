@@ -2,6 +2,7 @@ import React from 'react'
 import * as BooksAPI from './BooksAPI'
 import './App.css'
 import  BookShelf  from './BookShelf'
+import { Link } from 'react-router-dom'
 
 class BooksApp extends React.Component {
   state = {
@@ -38,6 +39,9 @@ class BooksApp extends React.Component {
                 <BookShelf books={CurrentlyReading} onShelfChange={this.onShelfChange} name="Currently Reading"/>
                 <BookShelf books={wantToRead} onShelfChange={this.onShelfChange} name="Want to Read"/>
                 <BookShelf books={read} onShelfChange={this.onShelfChange} name="Read"/>
+            </div>
+            <div className="open-search">
+              <Link to="/search">Add a book</Link>
             </div>
       </div>
     )
