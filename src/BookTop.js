@@ -10,7 +10,7 @@ class BookTop extends React.Component {
     bookStatusChanger = (e) => {
         const shelf = e.target.value;
         this.props.onShelfChange(this.props.book, shelf);
-    };
+    }
     render(){
         const { book, image } = this.props;
         return(

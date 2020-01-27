@@ -12,11 +12,11 @@ class Books extends React.Component {
       const { onShelfChange, books } = this.props;
         return(
             <div className="bookshelf-books">
-            <ol className="books-grid">
-              {books.map((book) => (
-                <Book onShelfChange={onShelfChange} key={book.id} book={book}/>
-                      ))}
-            </ol>
+              <ol className="books-grid">
+                {books.map((book) => (
+                  <Book onShelfChange={onShelfChange} key={book.id} book={book}/>
+                ))}
+              </ol>
           </div>
         )
     }
