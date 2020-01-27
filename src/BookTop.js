@@ -1,8 +1,12 @@
 import React from 'react'
 import './App.css'
-
+import PropTypes from 'prop-types'; 
 
 class BookTop extends React.Component {
+    static propTypes ={
+        book: PropTypes.object.isRequired,
+        image: PropTypes.string.isRequired,
+    }
     bookStatusChanger = (e) => {
         const shelf = e.target.value;
         this.props.onShelfChange(this.props.book, shelf);
