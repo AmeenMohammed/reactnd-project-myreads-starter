@@ -3,13 +3,17 @@ import './App.css'
 
 
 class BookTop extends React.Component {
+    bookStatusChanger = (e) => {
+        const shelf = e.target.value;
+        this.props.onShelfChange(this.props.book, shelf);
+    };
     render(){
-        const { shelf, image } = this.props;
+        const { book, image } = this.props;
         return(
             <div className="book-top">
                 <div className="book-cover" style={{ width: 128, height: 192, backgroundImage: `url(${image})` }}></div>
                 <div className="book-shelf-changer">
-                <select value={shelf}>
+                <select value={book.shelf} onChange={this.bookStatusChanger}>
                     <option value="move" disabled>Move to...</option>
                     <option value="currentlyReading">Currently Reading</option>
                     <option value="wantToRead">Want to Read</option>

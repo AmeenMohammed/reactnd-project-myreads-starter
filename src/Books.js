@@ -8,7 +8,7 @@ class Books extends React.Component {
             <div className="bookshelf-books">
             <ol className="books-grid">
               {this.props.books.map((book) => (
-                <Book key={book.id} book={book}/>
+                <Book onShelfChange={this.props.onShelfChange} key={book.id} book={book}/>
                       ))}
             </ol>
           </div>

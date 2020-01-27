@@ -15,6 +15,16 @@ class BooksApp extends React.Component {
       }))
     })
   }
+  onShelfChange = (book, selValue)=>{
+    book.shelf = selValue;
+    this.setState(prevState => ({
+      books: prevState
+        .books
+        .filter(b => b.id !== book.id)
+        .concat([book])
+    }))
+    BooksAPI.update(book, selValue)
+  }
   render() {
     const wantToRead = this.state.books.filter((book)=>(book.shelf === "wantToRead"));
     const read = this.state.books.filter((book)=>(book.shelf === "read"));
@@ -26,9 +36,9 @@ class BooksApp extends React.Component {
               <div className="list-books-title">
                 <h1>MyReads</h1>
               </div>
-                <BookShelf books={CurrentlyReading} name="Currently Reading"/>
-                <BookShelf books={wantToRead} name="Want to Read"/>
-                <BookShelf books={read} name="Read"/>
+                <BookShelf books={CurrentlyReading} onShelfChange={this.onShelfChange} name="Currently Reading"/>
+                <BookShelf books={wantToRead} onShelfChange={this.onShelfChange} name="Want to Read"/>
+                <BookShelf books={read} onShelfChange={this.onShelfChange} name="Read"/>
             </div>
       </div>
     )

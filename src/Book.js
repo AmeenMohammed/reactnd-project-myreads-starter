@@ -4,12 +4,12 @@ import  BookTop  from './BookTop'
 
 class Book extends React.Component {
     render(){
-        const { book } = this.props;
+        const { book, onShelfChange } = this.props;
 
         return(
                 <li>   
                     <div className="book">
-                        <BookTop shelf={book.shelf} image={book.imageLinks.thumbnail}/>
+                        <BookTop onShelfChange={onShelfChange} book={book} image={book.imageLinks.thumbnail}/>
                         <div className="book-title">{book.title}</div>
                         <div className="book-authors">{book.authors}</div>
                     </div>
