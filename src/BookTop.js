@@ -5,14 +5,15 @@ import PropTypes from 'prop-types';
 class BookTop extends React.Component {
     static propTypes ={
         book: PropTypes.object.isRequired,
-        image: PropTypes.string.isRequired,
     }
     bookStatusChanger = (e) => {
         const shelf = e.target.value;
         this.props.onShelfChange(this.props.book, shelf);
     }
     render(){
-        const { book, image } = this.props;
+        const { book } = this.props;
+        let image = book.imageLinks ? book.imageLinks.thumbnail : 'http://lgimages.s3.amazonaws.com/nc-md.gif'
+
         return(
             <div className="book-top">
                 <div className="book-cover" style={{ width: 128, height: 192, backgroundImage: `url(${image})` }}></div>

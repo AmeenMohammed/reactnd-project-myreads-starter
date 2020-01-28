@@ -13,7 +13,7 @@ class Book extends React.Component {
         return(
                 <li>   
                     <div className="book">
-                        <BookTop onShelfChange={onShelfChange} book={book} image={book.imageLinks.thumbnail}/>
+                        <BookTop onShelfChange={onShelfChange} book={book} />
                         <div className="book-title">{book.title}</div>
                         <div className="book-authors">{book.authors}</div>
                     </div>
