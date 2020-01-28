@@ -54,7 +54,6 @@ class BooksApp extends React.Component {
             render={({history}) => (<SearchBooks
             books={this.state.books}
             onShelfChange={this.onShelfChange}
-            history={history}
             />)}/>
       </div>
     )
