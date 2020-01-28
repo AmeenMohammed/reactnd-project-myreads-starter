@@ -17,6 +17,7 @@ class SearchBooks extends React.Component {
               if (books.error) {
                 this.setState({ searchBooks: [] })
               } else {
+                this.addBookStatus(books);
                 this.setState({ searchBooks: books })
               }
             })
@@ -24,6 +25,20 @@ class SearchBooks extends React.Component {
             this.setState({ searchBooks: [] })
           }
     
+      }
+
+      addBookStatus = (searchedBooks) => {
+        searchedBooks.forEach((book) => {
+          let shelfBook = this.props.books.find((b) => {
+            return b.id === book.id;
+          });
+    
+          if (shelfBook) {
+            book.shelf = shelfBook.shelf;
+          } else {
+            book.shelf = 'none';
+          }
+        })
       }
     
     render() {
